@@ -1,0 +1,60 @@
+[
+  {
+    "name": "terraform-ecs-yellow-container",
+    "image": "public.ecr.aws/c5b2h6m3/docker-images:yellow",
+    "memory": 512,
+    "links": ["terraform-ecs-red-container","terraform-ecs-blue-container"],
+    "portMappings": [
+      {
+        "hostPort": 80,
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "entryPoint": [],
+    "command": [],
+    "environment": [],
+    "mountPoints": [],
+    "volumesFrom": []
+  },
+  {
+    "name": "terraform-ecs-red-container",
+    "image": "public.ecr.aws/c5b2h6m3/docker-images:red",
+    "memory": 128,
+    "links": [],
+    "portMappings": [
+      {
+        "hostPort": 81,
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "entryPoint": [],
+    "command": [],
+    "environment": [],
+    "mountPoints": [],
+    "volumesFrom": []
+  },
+  {
+    "name": "terraform-ecs-blue-container",
+    "image": "public.ecr.aws/c5b2h6m3/docker-images:blue",
+    "memory": 128,
+    "links": [],
+    "portMappings": [
+      {
+        "hostPort": 82,
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "entryPoint": [],
+    "command": [],
+    "environment": [],
+    "mountPoints": [],
+    "volumesFrom": []
+  }
+
+]

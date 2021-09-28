@@ -1,0 +1,11 @@
+*.tfstate
+*.tfvars
+*.tfstate.backup
+*.tfstate.lock.info
+*.tfstate.lock.hcl
+*.terraform.lock.hcl
+# Directory
+.terraform/
+.tmp/
+# SSH Keys
+*.pem
